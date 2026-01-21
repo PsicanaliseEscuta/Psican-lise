@@ -388,3 +388,49 @@ footer {
     flex-direction: column-reverse;
     text-align: center;
     gap: 30px;
+
+     /* =========================================
+   12. RODAPÉ PERSONALIZADO (BoeiraDev)
+   ========================================= */
+.footer-assinatura {
+  background-color: #e6dfcf; /* Mesma cor que você já usou no item 9 do CSS */
+  padding: 40px 5%;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-assinatura p {
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.dev-credito {
+  margin-top: 15px;
+  font-size: 0.9rem !important;
+}
+
+.dev-credito strong {
+  color: var(--text-main);
+  letter-spacing: 1px;
+}
+
+.dev-contato {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--primary); /* Usa o terracota do seu projeto */
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.dev-contato i {
+  font-size: 1.1rem;
+}
+
+.dev-contato:hover {
+  color: var(--primary-hover);
+  transform: translateY(-2px);
+}
