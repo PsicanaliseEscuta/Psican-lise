@@ -1,439 +1,450 @@
 /* =========================================
-   1. RESET E VARIÁVEIS GLOBAIS
-   ========================================= */
+   1. RESET E VARIÁVEIS GLOBAIS
+   ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* Cores */
-  --bg: #f9f7f2;          /* Bege clarinho (fundo padrão) */
-  --bg-alt: #efe8d8;      /* Bege destaque (fundo alternativo) */
-  --text-main: #2c2825;   /* Texto escuro */
-  --text-soft: #6a625b;   /* Texto suave */
-  
-  /* Cor de destaque (Botões e Links) - Terracota */
-  --primary: #5E2C2C ;    
-  --primary-hover: #E8DDD3;
-  --text-on-primary: #fff;
+  /* Cores Principais */
+  --primary: #5E2C2C;       /* Terracota Escuro */
+  --bg-alt: #E8DDD3;        /* Bege Claro (Fundo alternativo) */
+  
+  /* Cores de Apoio */
+  --bg: #fcfbf9;            /* Quase branco */
+  --text-main: #2c2825;     /* Texto escuro padrão */
+  --text-soft: #6a625b;     /* Texto suave */
+  
+  /* Botões e Interação */
+  --primary-hover: #E8DDD3; 
+  --text-on-primary: #fff;
 
-  /* WhatsApp (Verde oficial) */
-  --whatsapp: #25d366;
+  /* WhatsApp (Verde oficial) */
+  --whatsapp: #25d366;
 
-  /* Estrutura */
-  --shadow: 0 8px 24px rgba(0,0,0,0.08);
-  --radius: 12px;
-  --max-width: 1100px;
+  /* Estrutura */
+  --shadow: 0 8px 24px rgba(94, 44, 44, 0.15);
+  --radius: 12px;
+  --max-width: 1100px;
 }
 
 /* =========================================
-   2. BASE
-   ========================================= */
+   2. BASE
+   ========================================= */
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text-main);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-img { display: block; max-width: 100%; height: auto; }
+/* Correção Global de Imagens */
+img { 
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+}
+
 ul { list-style: none; }
 a { text-decoration: none; color: inherit; }
 
-/* Contêiner para centralizar textos menores */
 .container-limitado { max-width: 900px; margin: 0 auto; }
 
 /* Tipografia */
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
-  color: #443e38;
-  line-height: 1.2;
+  font-family: 'Playfair Display', serif;
+  color: var(--primary);
+  line-height: 1.2;
 }
 
 /* =========================================
-   3. COMPONENTES (BOTÕES)
-   ========================================= */
+   3. COMPONENTES (BOTÕES)
+   ========================================= */
 .btn {
-  display: inline-block;
-  background: var(--primary);
-  color: var(--text-on-primary);
-  padding: 14px 32px;
-  border-radius: 50px;
-  font-weight: 600;
-  box-shadow: var(--shadow);
-  transition: 0.3s ease;
-  cursor: pointer;
-  letter-spacing: 0.5px;
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-on-primary);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  border: 2px solid var(--primary);
 }
 
 .btn:hover {
-  background: var(--primary-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(199, 125, 99, 0.3);
+  background: var(--bg-alt);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(94, 44, 44, 0.2);
 }
 
 /* =========================================
-   4. HERO (TOPO)
-   ========================================= */
+   4. HERO (TOPO)
+   ========================================= */
 .hero {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
-  /* AJUSTE: Reduzi o padding-bottom para 10px para colar na próxima seção */
-  padding: 80px 5% 10px 5%;
-  min-height: auto;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 5% 10px 5%;
+  min-height: auto;
 }
 
 .hero-text { max-width: 520px; }
 
 .hero-text h1 {
-  font-size: clamp(36px, 5vw, 54px);
-  margin-bottom: 16px;
+  font-size: clamp(36px, 5vw, 54px);
+  margin-bottom: 16px;
 }
 
 .hero-text p {
-  margin-bottom: 28px;
-  color: var(--text-soft);
-  font-size: 1.1rem;
-  max-width: 45ch;
+  margin-bottom: 28px;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+  max-width: 45ch;
 }
 
+/* Correção Imagem Hero */
 .hero-image img {
-  width: min(380px, 80vw);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  width: 100%;        
+  max-width: 400px;   
+  height: auto;       
+  object-fit: cover;  
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 auto;
 }
 
 /* =========================================
-   5. PROBLEMAS (IDENTIFICAÇÃO)
-   ========================================= */
+   5. PROBLEMAS (IDENTIFICAÇÃO)
+   ========================================= */
 .problemas {
-  /* AJUSTE: Padding-top zerado ou bem pequeno para colar no Hero */
-  padding: 20px 5% 60px;
-  background: var(--bg);
-  text-align: center;
+  padding: 20px 5% 60px;
+  background: var(--bg);
+  text-align: center;
 }
 
 .problemas h2 {
-  font-size: clamp(24px, 4vw, 32px);
-  margin-bottom: 24px;
+  font-size: clamp(24px, 4vw, 32px);
+  margin-bottom: 24px;
 }
 
 .tags {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .tags span {
-  background: #fff;
-  border: 1px solid #e6dec8;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 0.95rem;
-  color: var(--text-soft);
-  font-weight: 500;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  background: #fff;
+  border: 1px solid var(--bg-alt);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
 }
 
 /* =========================================
-   6. SOBRE MIM
-   ========================================= */
+   6. SOBRE MIM
+   ========================================= */
 .sobre {
-  padding: 60px 5%;
-  background: var(--bg-alt); /* Cor diferente para separar */
+  padding: 60px 5%;
+  background: var(--bg-alt);
 }
 
 .sobre h2 { text-align: center; margin-bottom: 40px; font-size: 32px; }
 
 .sobre-box {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .sobre-texto { max-width: 500px; }
-
 .sobre-texto h3 { font-size: 26px; margin-bottom: 5px; }
 
 .destaque-texto {
-  display: block;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 20px;
+  display: block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .sobre-texto p {
-  color: var(--text-soft);
-  margin-bottom: 16px;
-  text-align: justify;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  text-align: justify;
 }
 
-/* Carrossel de Fotos */
+/* Carrossel de Fotos (Correção) */
 .carousel {
-  width: 280px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 4px solid #fff;
+  width: 280px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 4px solid #fff;
 }
 .carousel-track { display: flex; animation: slide 12s infinite; }
+
 .carousel-track img {
-  width: 280px; height: 350px;
-  flex-shrink: 0; object-fit: cover;
+  width: 280px;       /* Fixo */
+  height: 350px;      /* Fixo */
+  object-fit: cover;  /* Corta excesso sem distorcer */
+  border-radius: 4px;
+  flex-shrink: 0;
 }
+
 @keyframes slide {
-  0%, 30% { transform: translateX(0); }
-  33%, 63% { transform: translateX(-280px); }
-  66%, 96% { transform: translateX(-560px); }
-  100% { transform: translateX(0); }
+  0%, 30% { transform: translateX(0); }
+  33%, 63% { transform: translateX(-280px); }
+  66%, 96% { transform: translateX(-560px); }
+  100% { transform: translateX(0); }
 }
 
 /* =========================================
-   7. COMO FUNCIONA
-   ========================================= */
+   7. COMO FUNCIONA
+   ========================================= */
 .como-funciona {
-  padding: 80px 5%;
-  background: var(--bg);
-  text-align: center;
+  padding: 80px 5%;
+  background: var(--bg);
+  text-align: center;
 }
 .como-funciona h2 { margin-bottom: 40px; }
 
 .passos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .passo-card {
-  background: #fff;
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-  transition: 0.3s;
-  border: 1px solid #f0ece0;
+  background: #fff;
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+  transition: 0.3s;
+  border: 1px solid var(--bg-alt);
 }
 
-.passo-card:hover { transform: translateY(-5px); }
+.passo-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
 .passo-card i {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 15px;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* Correção de ícones dentro dos cards (caso use imagem) */
+.passo-card img {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
 
 .passo-card h4 { margin-bottom: 10px; font-size: 1.2rem; }
 .passo-card p { font-size: 0.9rem; color: var(--text-soft); }
 
 /* =========================================
-   8. FAQ (DÚVIDAS)
-   ========================================= */
+   8. FAQ (DÚVIDAS)
+   ========================================= */
 .faq {
-  /* AJUSTE: Padding superior de 100px para AFASTAR do bloco anterior */
-  padding: 100px 5% 60px;
-  background: var(--bg-alt);
+  padding: 100px 5% 60px;
+  background: var(--bg-alt);
 }
 .faq h2 { text-align: center; margin-bottom: 40px; }
 
 details {
-  background: #fff;
-  margin-bottom: 15px;
-  padding: 18px 24px;
-  border-radius: 8px;
-  border: 1px solid #e0d8c8;
-  cursor: pointer;
-  transition: 0.2s;
+  background: #fff;
+  margin-bottom: 15px;
+  padding: 18px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(94, 44, 44, 0.1);
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 details[open] { border-color: var(--primary); }
 
 summary {
-  font-weight: 600;
-  color: var(--text-main);
-  list-style: none;
-  position: relative;
-  padding-right: 20px;
+  font-weight: 600;
+  color: var(--text-main);
+  list-style: none;
+  position: relative;
+  padding-right: 20px;
 }
 summary::-webkit-details-marker { display: none; }
 
-/* Ícone de + e - */
 summary::after {
-  content: '+';
-  position: absolute;
-  right: 0;
-  font-size: 1.2rem;
-  color: var(--primary);
-  font-weight: bold;
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: bold;
 }
 details[open] summary::after { content: '-'; }
 
 details p {
-  margin-top: 12px;
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  border-top: 1px solid #f0f0f0;
-  padding-top: 12px;
+  margin-top: 12px;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
 }
 
 /* =========================================
-   9. GOOGLE REVIEW E RODAPÉ
-   ========================================= */
+   9. GOOGLE REVIEW
+   ========================================= */
 .google-review {
-  padding: 20px 5% 40px;
-  text-align: center;
-  background: var(--bg-alt);
-  margin-top: -10px; /* Aproxima do FAQ levemente */
+  padding: 40px 5%;
+  text-align: center;
+  background: #fff;
+  margin-top: 0;
+  border-top: 1px solid var(--bg-alt);
 }
-.chamada-review {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  color: var(--text-soft);
-  margin-bottom: 10px;
-}
-.google-review img {
-  width: 130px;
-  margin: 0 auto;
-  opacity: 0.9;
-  transition: 0.3s;
-}
-.google-review img:hover { transform: scale(1.05); opacity: 1; }
 
+.chamada-review {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 20px;
+}
+
+/* Correção Logo Google */
+.google-review img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  opacity: 1;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.google-review img:hover { transform: scale(1.05); }
+
+/* =========================================
+   10. RODAPÉ
+   ========================================= */
 footer {
-  background: #e6dfcf;
-  padding: 50px 5% 20px;
-  text-align: center;
-  color: #5a544e;
+  background: var(--bg-alt);
+  padding: 50px 5% 20px;
+  text-align: center;
+  color: var(--primary);
 }
+
 .redes {
-  margin: 20px 0;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
-.redes a { font-weight: 600; font-size: 0.9rem; transition: 0.2s; }
+.redes a { 
+    font-weight: 600; 
+    font-size: 0.9rem; 
+    transition: 0.2s; 
+    color: var(--text-main);
+}
 .redes a:hover { color: var(--primary); }
-.copy { font-size: 0.8rem; opacity: 0.7; margin-top: 30px; }
 
-/* =========================================
-   10. BOTÃO WHATSAPP FLUTUANTE
-   ========================================= */
-.whatsapp-float {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: var(--whatsapp);
-  color: #fff;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 32px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-.whatsapp-float:hover {
-  transform: scale(1.3);
-  background: #1ebc57;
-}
+.copy { font-size: 0.8rem; opacity: 0.7; margin-top: 30px; color: var(--text-main); }
 
-/* =========================================
-   9. GOOGLE REVIEW (Destacado)
-   ========================================= */
-.google-review {
-  padding: 40px 5%;
-  text-align: center;
-  background: #fff; /* Fundo BRANCO para destacar do FAQ */
-  margin-top: 0;
-  border-top: 1px solid #e0d8c8; /* Linha sutil separando */
-}
-
-.chamada-review {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1.2rem;
-  color: var(--text-main);
-  margin-bottom: 20px;
-}
-
-.google-review img {
-  width: 140px;      /* Um pouco maior */
-  margin: 0 auto;
-  opacity: 1;        /* Totalmente visível */
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.google-review img:hover {
-  transform: scale(1.05);
-}
-
-/* =========================================
-   11. RESPONSIVIDADE (CELULAR)
-   ========================================= */
-@media (max-width: 900px) {
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 30px;
-
-     /* =========================================
-   12. RODAPÉ PERSONALIZADO (BoeiraDev)
-   ========================================= */
 .footer-assinatura {
-  background-color: #e6dfcf; /* Mesma cor que você já usou no item 9 do CSS */
-  padding: 40px 5%;
-  text-align: center;
-  border-top: 1px solid rgba(0,0,0,0.05);
+  background-color: var(--bg-alt);
+  padding: 40px 5%;
+  text-align: center;
+  border-top: 1px solid rgba(94, 44, 44, 0.1);
 }
 
 .footer-assinatura p {
-  color: var(--text-soft);
-  font-size: 0.85rem;
-  margin-bottom: 8px;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  margin-bottom: 8px;
 }
 
 .dev-credito {
-  margin-top: 15px;
-  font-size: 0.9rem !important;
+  margin-top: 15px;
+  font-size: 0.9rem !important;
 }
 
 .dev-credito strong {
-  color: var(--text-main);
-  letter-spacing: 1px;
+  color: var(--text-main);
+  letter-spacing: 1px;
 }
 
 .dev-contato {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  color: var(--primary); /* Usa o terracota do seu projeto */
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--primary); 
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: 0.3s;
 }
 
-.dev-contato i {
-  font-size: 1.1rem;
-}
+.dev-contato i { font-size: 1.1rem; }
 
 .dev-contato:hover {
-  color: var(--primary-hover);
-  transform: translateY(-2px);
+  color: var(--text-main);
+  transform: translateY(-2px);
 }
 
+/* =========================================
+   11. BOTÃO WHATSAPP FLUTUANTE
+   ========================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--whatsapp);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 32px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
 
-Muda as cores desses css para essas #5E2C2C e #E8DDD3
+/* Ícone dentro do botão WhatsApp não pode ser distorcido */
+.whatsapp-float img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background: #1ebc57;
+}
+
+/* =========================================
+   12. RESPONSIVIDADE (CELULAR)
+   ========================================= */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+}
